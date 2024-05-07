@@ -1,8 +1,13 @@
-require ( './helpers.js' );
+const sinon = require( 'sinon' );
+const helpers = require( './helpers' );
+const chai = require( 'chai' );
+const spies = require( 'chai-spies' );
 
-describe("index.js", () => {
-  it("exists", () => {
-    expect(testVar).to.exist
-    expect(testVar).to.deep.equal({}) //without .deep, {} does not equal {}
-  })
-})
+chai.use( spies );
+
+describe( "main.js", () => {
+  it("contains a hidden modal", () => {
+    let modal = document.querySelector('.hidden')
+    expect(modal).not.to.equal(null)
+  } )
+} )
